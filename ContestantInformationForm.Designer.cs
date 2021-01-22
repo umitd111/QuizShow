@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContestantInformationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.moneyInfoLbl = new System.Windows.Forms.Label();
-            this.MoneyLbl = new System.Windows.Forms.Label();
+            this.moneyLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameInfoLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 24);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // moneyInfoLbl
             // 
@@ -71,14 +73,14 @@
             this.moneyInfoLbl.TabIndex = 2;
             this.moneyInfoLbl.Text = "That Contestant Earn This Much Money:";
             // 
-            // MoneyLbl
+            // moneyLbl
             // 
-            this.MoneyLbl.AutoSize = true;
-            this.MoneyLbl.Location = new System.Drawing.Point(557, 307);
-            this.MoneyLbl.Name = "MoneyLbl";
-            this.MoneyLbl.Size = new System.Drawing.Size(50, 17);
-            this.MoneyLbl.TabIndex = 3;
-            this.MoneyLbl.Text = "Money";
+            this.moneyLbl.AutoSize = true;
+            this.moneyLbl.Location = new System.Drawing.Point(557, 307);
+            this.moneyLbl.Name = "moneyLbl";
+            this.moneyLbl.Size = new System.Drawing.Size(50, 17);
+            this.moneyLbl.TabIndex = 3;
+            this.moneyLbl.Text = "Money";
             // 
             // label2
             // 
@@ -182,11 +184,13 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Total Amount Of Given Money:";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ContestantInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(931, 513);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -199,7 +203,7 @@
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.nameInfoLbl);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.MoneyLbl);
+            this.Controls.Add(this.moneyLbl);
             this.Controls.Add(this.moneyInfoLbl);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -216,7 +220,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label moneyInfoLbl;
-        private System.Windows.Forms.Label MoneyLbl;
+        private System.Windows.Forms.Label moneyLbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nameInfoLbl;
         private System.Windows.Forms.Label nameLbl;

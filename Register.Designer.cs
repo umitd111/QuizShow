@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.createAccountBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,11 +40,15 @@
             this.emailTxt = new System.Windows.Forms.TextBox();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.usernameTxt = new System.Windows.Forms.TextBox();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.surnameTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // createAccountBtn
             // 
-            this.createAccountBtn.Location = new System.Drawing.Point(53, 294);
+            this.createAccountBtn.Location = new System.Drawing.Point(300, 194);
             this.createAccountBtn.Name = "createAccountBtn";
             this.createAccountBtn.Size = new System.Drawing.Size(141, 47);
             this.createAccountBtn.TabIndex = 13;
@@ -54,7 +59,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 227);
+            this.label5.Location = new System.Drawing.Point(56, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 17);
             this.label5.TabIndex = 8;
@@ -63,7 +68,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 184);
+            this.label4.Location = new System.Drawing.Point(300, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 9;
@@ -98,7 +103,7 @@
             // 
             // phoneNumberTxt
             // 
-            this.phoneNumberTxt.Location = new System.Drawing.Point(53, 247);
+            this.phoneNumberTxt.Location = new System.Drawing.Point(53, 206);
             this.phoneNumberTxt.Name = "phoneNumberTxt";
             this.phoneNumberTxt.Size = new System.Drawing.Size(179, 22);
             this.phoneNumberTxt.TabIndex = 3;
@@ -106,7 +111,7 @@
             // 
             // ageTxt
             // 
-            this.ageTxt.Location = new System.Drawing.Point(53, 204);
+            this.ageTxt.Location = new System.Drawing.Point(300, 159);
             this.ageTxt.Name = "ageTxt";
             this.ageTxt.Size = new System.Drawing.Size(51, 22);
             this.ageTxt.TabIndex = 4;
@@ -134,20 +139,57 @@
             this.usernameTxt.TabIndex = 7;
             this.usernameTxt.TextChanged += new System.EventHandler(this.usernameTxt_TextChanged);
             // 
+            // nameTxt
+            // 
+            this.nameTxt.Location = new System.Drawing.Point(300, 69);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(179, 22);
+            this.nameTxt.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(297, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Name:";
+            // 
+            // surnameTxt
+            // 
+            this.surnameTxt.Location = new System.Drawing.Point(300, 114);
+            this.surnameTxt.Name = "surnameTxt";
+            this.surnameTxt.Size = new System.Drawing.Size(179, 22);
+            this.surnameTxt.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(297, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Surname:";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 435);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(571, 302);
             this.Controls.Add(this.createAccountBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.phoneNumberTxt);
             this.Controls.Add(this.ageTxt);
             this.Controls.Add(this.emailTxt);
+            this.Controls.Add(this.surnameTxt);
+            this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.usernameTxt);
             this.Name = "Register";
@@ -171,5 +213,9 @@
         private System.Windows.Forms.TextBox emailTxt;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.TextBox usernameTxt;
+        private System.Windows.Forms.TextBox nameTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox surnameTxt;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -16,5 +16,18 @@ namespace QuizShowApplication
         {
             InitializeComponent();
         }
+
+        private void DisplayQuestionsBtn_Click(object sender, EventArgs e)
+        {
+            QuestionsForm form = new QuestionsForm();
+            form.Show();
+        }
+
+        private void DisplayContestantsBtn_Click(object sender, EventArgs e)
+        {
+            ContestantInformationForm form = new ContestantInformationForm();
+            form.Show();
+            this.Hide();
+        }
     }
 }

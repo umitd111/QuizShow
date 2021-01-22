@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adminforgotBtn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminuserForm));
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usenameLabel = new System.Windows.Forms.Label();
             this.adminsigninBtn = new System.Windows.Forms.Button();
@@ -37,21 +37,10 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // adminforgotBtn
-            // 
-            this.adminforgotBtn.Location = new System.Drawing.Point(343, 280);
-            this.adminforgotBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.adminforgotBtn.Name = "adminforgotBtn";
-            this.adminforgotBtn.Size = new System.Drawing.Size(157, 28);
-            this.adminforgotBtn.TabIndex = 16;
-            this.adminforgotBtn.Text = "I forgot my password";
-            this.adminforgotBtn.UseVisualStyleBackColor = true;
-            this.adminforgotBtn.Click += new System.EventHandler(this.adminforgotBtn_Click);
-            // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(254, 216);
+            this.passwordLabel.Location = new System.Drawing.Point(258, 234);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(73, 17);
             this.passwordLabel.TabIndex = 15;
@@ -60,7 +49,7 @@
             // usenameLabel
             // 
             this.usenameLabel.AutoSize = true;
-            this.usenameLabel.Location = new System.Drawing.Point(254, 174);
+            this.usenameLabel.Location = new System.Drawing.Point(258, 192);
             this.usenameLabel.Name = "usenameLabel";
             this.usenameLabel.Size = new System.Drawing.Size(83, 17);
             this.usenameLabel.TabIndex = 14;
@@ -68,17 +57,18 @@
             // 
             // adminsigninBtn
             // 
-            this.adminsigninBtn.Location = new System.Drawing.Point(344, 246);
+            this.adminsigninBtn.Location = new System.Drawing.Point(348, 264);
             this.adminsigninBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminsigninBtn.Name = "adminsigninBtn";
             this.adminsigninBtn.Size = new System.Drawing.Size(156, 28);
             this.adminsigninBtn.TabIndex = 12;
             this.adminsigninBtn.Text = "Sign In";
             this.adminsigninBtn.UseVisualStyleBackColor = true;
+            this.adminsigninBtn.Click += new System.EventHandler(this.adminsigninBtn_Click);
             // 
             // adminpasswordTxt
             // 
-            this.adminpasswordTxt.Location = new System.Drawing.Point(344, 213);
+            this.adminpasswordTxt.Location = new System.Drawing.Point(348, 231);
             this.adminpasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminpasswordTxt.Name = "adminpasswordTxt";
             this.adminpasswordTxt.Size = new System.Drawing.Size(156, 22);
@@ -86,7 +76,7 @@
             // 
             // adminusernameTxt
             // 
-            this.adminusernameTxt.Location = new System.Drawing.Point(344, 171);
+            this.adminusernameTxt.Location = new System.Drawing.Point(348, 189);
             this.adminusernameTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminusernameTxt.Name = "adminusernameTxt";
             this.adminusernameTxt.Size = new System.Drawing.Size(156, 22);
@@ -107,9 +97,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.adminforgotBtn);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usenameLabel);
             this.Controls.Add(this.adminsigninBtn);
@@ -124,8 +114,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button adminforgotBtn;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usenameLabel;
         private System.Windows.Forms.Button adminsigninBtn;

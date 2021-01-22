@@ -24,16 +24,21 @@ namespace QuizShowApplication
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
             SqlCon sql = new SqlCon();
+            Contestant c = new Contestant();
             
-
-                Contestant c = new Contestant();
+            //Values From Form
             c.Username = usernameTxt.Text;
             c.Password = passwordTxt.Text;
             c.Email = emailTxt.Text;
             c.Age = Convert.ToInt32(ageTxt.Text);
             c.Phonenumber = phoneNumberTxt.Text;
+            c.Name = nameTxt.Text;
+            c.Surname = surnameTxt.Text;
+            int joined = 0; //To give value to not join the quiz
             
-            if (usernameTxt.Text == "" || passwordTxt.Text == "" || emailTxt.Text == "" || ageTxt.Text == "" || phoneNumberTxt.Text == "")
+            //Empty Check
+            if (usernameTxt.Text == "" || passwordTxt.Text == "" || emailTxt.Text == "" || 
+                ageTxt.Text == "" || phoneNumberTxt.Text == "" || nameTxt.Text =="" || surnameTxt.Text == "")
             {
                 MessageBox.Show("You should fill all the blanks.");
             }
@@ -44,7 +49,7 @@ namespace QuizShowApplication
                 username = usernameTxt.Text;
                 //Started connection db
 
-                SqlCommand usernameCheck = new SqlCommand("SELECT * FROM RegContester WHERE username='" + username + "'", sql.GetSet);
+                SqlCommand usernameCheck = new SqlCommand("SELECT * FROM RegContestant WHERE username='" + username + "'", sql.GetSet);
                 
                 sql.OpenConnection();
                 SqlDataReader check = usernameCheck.ExecuteReader();
@@ -60,12 +65,15 @@ namespace QuizShowApplication
                     check.Close();
                     using (SqlCommand register = sql.CreateCmd())
                     {
-                        register.CommandText = "INSERT INTO RegContester (username,password,email,age,phonenumber) values (@p1,@p2,@p3,@p4,@p5);";
+                        register.CommandText = "INSERT INTO RegContestant (username,password,email,age,phonenumber,name,surname,alreadyjoined) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8);";
                         register.Parameters.Add(new SqlParameter("@p1", c.Username));
                         register.Parameters.Add(new SqlParameter("@p2", c.Password));
                         register.Parameters.Add(new SqlParameter("@p3", c.Email));
                         register.Parameters.Add(new SqlParameter("@p4", c.Age));
                         register.Parameters.Add(new SqlParameter("@p5", c.Phonenumber));
+                        register.Parameters.Add(new SqlParameter("@p6", c.Name));
+                        register.Parameters.Add(new SqlParameter("@p7", c.Surname));
+                        register.Parameters.Add(new SqlParameter("@p8", joined));
                         register.ExecuteNonQuery();
                     }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(contesterloginForm));
             this.userusernameTxt = new System.Windows.Forms.TextBox();
             this.userpasswordTxt = new System.Windows.Forms.TextBox();
             this.usersigninBtn = new System.Windows.Forms.Button();
@@ -35,7 +36,6 @@
             this.usenameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.userforgotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userusernameTxt
@@ -111,23 +111,12 @@
             this.listBox1.TabIndex = 8;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // userforgotBtn
-            // 
-            this.userforgotBtn.Location = new System.Drawing.Point(349, 278);
-            this.userforgotBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.userforgotBtn.Name = "userforgotBtn";
-            this.userforgotBtn.Size = new System.Drawing.Size(157, 28);
-            this.userforgotBtn.TabIndex = 9;
-            this.userforgotBtn.Text = "I forgot my password";
-            this.userforgotBtn.UseVisualStyleBackColor = true;
-            this.userforgotBtn.Click += new System.EventHandler(this.userforgotBtn_Click);
-            // 
             // contesterloginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(862, 447);
-            this.Controls.Add(this.userforgotBtn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usenameLabel);
@@ -152,7 +141,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox userusernameTxt;
-        private System.Windows.Forms.Button userforgotBtn;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuizShowApplication
 {
@@ -33,7 +34,25 @@ namespace QuizShowApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            SqlCon sql = new SqlCon();
+            sql.OpenConnection();
+
+            Contestant contest = new Contestant();
+            contest.Username = userusernameTxt.Text;
+            contest.Password = userpasswordTxt.Text;
+
+            SqlCommand userpassCheck =
+            new SqlCommand("SELECT username, password FROM RegContestant WHERE username='" + contest.Username + "' AND password ='" + contest.Password + "'" , sql.GetSet);
+            SqlDataReader reader = userpassCheck.ExecuteReader();
+            if (reader.Read())
+            {
+                ContestantForm conForm = new ContestantForm();
+                conForm.label1.Text = contest.Username;
+                conForm.Show();
+                this.Hide();
+            } 
+            else { MessageBox.Show("Please Check Your Username Or Password And Try Again"); }
+            sql.CloseConnection();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,8 +62,7 @@ namespace QuizShowApplication
 
         private void userforgotBtn_Click(object sender, EventArgs e)
         {
-            forgotpassForm f = new forgotpassForm();
-            f.Show();
+            
         }
 
         private void usenameLabel_Click(object sender, EventArgs e)
